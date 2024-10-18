@@ -9,7 +9,7 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     permissions:
-      contents: write  # if you have a protection rule on your repository, you'll need to give write permission to the workflow.
+      contents: write
     steps:
       - name: Deploy JavaDoc
         uses: MathieuSoysal/Javadoc-publisher.yml@v2.5.0
@@ -19,4 +19,4 @@ jobs:
           java-version: 21
           target-folder: javadoc
           project: maven
-	  custom-command: mvn -B javadoc:javadoc --file pom.xml
+          custom-command: mvn -B javadoc:javadoc --file pom.xml
