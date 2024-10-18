@@ -35,24 +35,23 @@ final class ChatServer {
     }
 
     /**
-     * Main method of <code>ChatServer</code>. It reads the arguments and then calls <code>execute()</code>.
+     * Main method of <code>ChatServer</code>. It reads the arguments and then calls <code>execute()</code>. 5050 is the default server port.
      *
      * @param args the args for the program
      * @see #execute()
      */
     public static void main(final String[] args) {
-        // TODO configure default port
-        if (args.length < 1) {
-            System.out.println("No port given");
-            System.exit(1);
-        }
+        // TODO parse arguments with common-cli
 
-        int port = 0; // temp. value: will never be 0 at end of try-catch statement
-        try {
-            port = Integer.parseInt(args[0]);
-        } catch (final NumberFormatException numberFormatException) {
-            System.err.println("Can't convert port string to a number");
-            System.exit(1);
+        int port = 5050;
+
+        if (args.length > 1) {
+            try {
+                port = Integer.parseInt(args[0]);
+            } catch (final NumberFormatException numberFormatException) {
+                System.err.println("Can't convert port string to a number");
+                System.exit(1);
+            }
         }
 
         final ChatServer server = new ChatServer(port);
