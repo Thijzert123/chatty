@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"thijzert.chatty.client"},{"l":"thijzert.chatty.client.gui"},{"l":"thijzert.chatty.client.gui.scene"},{"l":"thijzert.chatty.data"},{"l":"thijzert.chatty.functions"},{"l":"thijzert.chatty.message"},{"l":"thijzert.chatty.server"}];updateSearchResults();
