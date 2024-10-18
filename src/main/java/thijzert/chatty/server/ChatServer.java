@@ -41,6 +41,7 @@ final class ChatServer {
      * @see #execute()
      */
     public static void main(final String[] args) {
+        // TODO configure default port
         if (args.length < 1) {
             System.out.println("No port given");
             System.exit(1);
