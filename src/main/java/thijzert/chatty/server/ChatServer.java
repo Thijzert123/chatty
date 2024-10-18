@@ -1,5 +1,6 @@
 package thijzert.chatty.server;
 
+import org.apache.commons.cli.*;
 import thijzert.chatty.data.Constants;
 import thijzert.chatty.data.Data;
 import thijzert.chatty.data.UserInfo;
@@ -40,16 +41,36 @@ final class ChatServer {
      * @param args the args for the program
      * @see #execute()
      */
-    public static void main(final String[] args) {
-        // TODO parse arguments with common-cli
+    public static void main(final String[] args) { // TODO add logger system
+        final Options cmdOptions = new Options();
+        final Option portOption = new Option("p", "port", true, "The port the server should run on. Defaults to 5050.");
+        final Option helpOption = new Option("h", "help", false, "Prints information about the usage of " + Constants.PROGRAM_NAME);
+        cmdOptions.addOption(portOption);
+        cmdOptions.addOption(helpOption);
+
+        final CommandLineParser cmdParser = new DefaultParser(true);
+        final HelpFormatter helpFormatter = new HelpFormatter();
+        CommandLine cmd = null;
+        try {
+            cmd = cmdParser.parse(cmdOptions, args);
+        } catch (final ParseException parseException) {
+            System.out.println(parseException.getMessage() + System.lineSeparator());
+            helpFormatter.printHelp(args[0], cmdOptions);
+            System.exit(1);
+        }
+
+        if (cmd.hasOption(helpOption)) {
+            helpFormatter.printHelp(args[0], cmdOptions);
+            System.exit(0);
+        }
 
         int port = 5050;
-
-        if (args.length > 1) {
+        if (cmd.hasOption(portOption)) {
             try {
-                port = Integer.parseInt(args[0]);
+                port = Integer.parseInt(cmd.getOptionValue(portOption));
             } catch (final NumberFormatException numberFormatException) {
-                System.err.println("Can't convert port string to a number");
+                System.err.println("Given port is not a number" + System.lineSeparator());
+                helpFormatter.printHelp(args[0], cmdOptions);
                 System.exit(1);
             }
         }
