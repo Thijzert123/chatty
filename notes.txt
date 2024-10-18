@@ -29,7 +29,7 @@ JAVADOC
 	 - @use
 	 - @author
 	 - @deprecated
-	 - Command line arguments: -link file:///usr/share/doc/libopenjfx-java/api
+	 - Generate with mvn javadoc:javadoc
  - Always add javadoc to:
          - Classes
          - Methods
