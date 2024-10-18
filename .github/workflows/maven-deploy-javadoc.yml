@@ -18,5 +18,6 @@ jobs:
           javadoc-branch: gh-pages
           java-version: 21
           target-folder: javadoc
+          javadoc-source-folder: target/reports/apidocs
           project: maven
           custom-command: mvn -B javadoc:javadoc --file pom.xml
