@@ -1,5 +1,9 @@
 #!/bin/bash
 
+#
+# Starts a Chatty server and two independent Chatty clients
+#
+
 if ! [ -f "pom.xml" ]
 then
   echo "Please go to the root of this project"
