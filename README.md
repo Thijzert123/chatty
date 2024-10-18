@@ -1,5 +1,5 @@
 # Chatty
-[![Javadoc](https://img.shields.io/badge/Javadoc-Online-green)](https://thijzert123.github.io/chatty/javadoc/)
+[![Javadoc](https://img.shields.io/badge/Javadoc-Online-green)](https://thijzert123.github.io/chatty/javadoc/)  [![Maven Package](https://github.com/Thijzert123/chatty/actions/workflows/maven-package.yml/badge.svg)](https://github.com/Thijzert123/chatty/actions/workflows/maven-package.yml)
 
 Chatty is a Java chat platform that's still work in progress. Help is appreciated, so feel free to open an issue or pull request.
 
