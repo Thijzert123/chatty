@@ -128,11 +128,11 @@ final class ChatServer {
     }
 
     /**
-     * Stores username of the newly connected client.
+     * Stores userinfo of the newly connected client.
      *
-     * @param userInfo the username of the newly connected client
+     * @param userInfo the user information of the newly connected client
      */
-    void addUserName(final UserInfo userInfo) {
+    void addUserInfo(final UserInfo userInfo) {
         connectedUsers_.add(userInfo);
     }
 

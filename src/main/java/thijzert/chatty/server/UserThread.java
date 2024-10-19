@@ -59,7 +59,7 @@ final class UserThread extends Thread {
                 return;
             }
 
-            server_.addUserName(userInfo);
+            server_.addUserInfo(userInfo);
 
             System.out.println("New user connected: " + userInfo.getName());
             server_.broadcast(new UserActionMessage(userInfo, UserActionMessage.UserAction.USER_CONNECTED), this);
