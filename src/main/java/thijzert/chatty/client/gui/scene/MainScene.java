@@ -632,7 +632,7 @@ public final class MainScene implements ChattyScene {
 
                 Platform.runLater(() -> setGraphic(nameLabel));
             } else {
-                Platform.runLater(() -> setGraphic(null)); // to avoid a bug in javafx 11
+                Platform.runLater(() -> setGraphic(null)); // to avoid a bug in javafx 11 // TODO see if this is still needed in JavaFX 21
             }
         }
     }

@@ -40,7 +40,7 @@ public final class ConnectedUsersMessage implements Message {
      */
     @Override
     public String toString() {
-        if (connectedUsers_.size() > 0) {
+        if (!connectedUsers_.isEmpty()) {
             return "Connected users: " + connectedUsers_;
         } else {
             return "No other users are connected";
